@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+     <link rel="stylesheet" type="text/css" href="style.css" />
+</head>
+<body>
+<div class="question">
+    <p>
+Challenge 1:
+Make a JavaScript program that checks two numbers and returns true if one of the numbers is 65 or if their sum is 65.
+</p>
+<form>
+    <input type = "text" id = "n1" placeholder="Enter first number">
+    <input type = "text" id = "n2" placeholder="Enter second number">
+    <input type = "button" value = "submit" onclick="TF();">
+</form>
+
+<p id="result">
+</p>
+</div>
+<script>
+function trueSixtyFive(n1, n2) {
+return n1 + n2 === 65 || n1 === 65 || n2 === 65;
+}
+function TF(){
+        let n1 = parseInt(document.getElementById("n1").value);
+        let n2 = parseInt(document.getElementById("n2").value);
+        if (trueSixtyFive(n1, n2)) {
+      document.getElementById("result").innerHTML =
+      "True. Either one or the sum of your numbers are equal to 65";
+    } else {
+        document.getElementById("result").innerHTML =
+      "False. The first number is not 65. The second number is not 65 and the sum of both numbers is not 65";
+    }
+}
+
+</script>
+</body>
+</html>

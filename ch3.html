@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+</head>
+<body>
+<p>
+    Challenge 3:
+Make a JavaScript program that returns the largest of three numbers. Bonus points: allow the user to provide 3 numbers and your program will return the largest of the three.
+</p>
+<p id="largestResult">
+</p>
+
+<script>
+"use strict";
+let n1 = parseInt(prompt("Please enter the first number"));
+let n2 = parseInt(prompt("Please enter the second number"));
+let n3 = parseInt(prompt("Please enter the third number"));
+function largestN(n1, n2, n3) {
+let largest = 0;
+if (n1 > n2)
+    largest = n1 > n3 ? n1 : n3;
+else
+    largest = n2 > n3 ? n2 : n3;
+return (largest);
+}
+let largestResult = largestN(n1, n2, n3);
+document.getElementById("largestResult").innerHTML = "The largest number is " + largestResult + ".";
+</script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+</head>
+<body>
+<p id="commonLetters">
+</p>
+
+<script>
+"use strict";
+let word1 = prompt("Please enter the first word");
+let word2 = prompt("Please enter the second word");
+
+function letterExists(word, letter) {
+    for (let i = 0; i < word.length; i++)
+        if (word[i] === letter)
+            return true;
+    return false;
+}
+    
+function commonLetters(word1, word2) { 
+    let letters = [];
+    for (let i = 0; i < word1.length; i++)
+        for (let j = 0; j < word2.length; j++)
+            if (word1[i] === word2[j] && letterExists(letters, word1[i]) === false){
+                letters.push(word1[i]);
+                console.log(word1[i] + " is equal to " + word2[j]);
+            }
+    return (letters);
+}
+let commonLettersResult = commonLetters(word1, word2);
+document.getElementById("commonLetters").innerHTML = "The common letters in " + word1 + " and " + word2 + " are: " + commonLettersResult;
+</script>
+</body>
+</html>

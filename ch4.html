@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+</head>
+<body>
+<p>
+    Challenge 4: 
+Make a JavaScript program to convert any number into hours and minutes. (For example, 71 will become 1 hour, 11 minutes; 133 will become 2 hours, 13 minutes.)
+
+</p>
+<p id="timeResult">
+</p>
+
+<script>
+"use strict";
+let timeUnits = parseInt(prompt("Please enter time units"));
+    
+function hrsMins(timeUnits) {
+    let hrs = Math.floor(timeUnits / 60);
+    let mins = timeUnits % 60;
+    let time = "The number of hour(s) is " + hrs + " and the number of minute(s) is " + mins + ".";
+    return time;
+}
+
+let timeResult = hrsMins(timeUnits);
+document.getElementById("timeResult").innerHTML = timeResult;
+</script>
+</body>
+</html>
